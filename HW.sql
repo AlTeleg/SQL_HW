@@ -29,7 +29,7 @@ collect_name VARCHAR(50) NOT NULL,
 release_year YEAR,
 );
 
- CREATE TABLE musician_album(
+CREATE TABLE musician_album(
 musician_id INTEGER REFERENCES musicians(id) ,
 album_id INTEGER REFERENCES albums(id),
 CONSTRAINT musician_alb_id PRIMARY KEY(musician_id,album_id)
@@ -177,4 +177,3 @@ WHERE first_name NOT LIKE '% %';
 SELECT song_name
 FROM songs
 WHERE song_name LIKE '%мой%' OR LIKE '%my%';
-
