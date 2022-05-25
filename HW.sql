@@ -47,7 +47,6 @@ collection_id INTEGER REFERENCES collections(id),
 CONSTRAINT song_collection_pk PRIMARY KEY(song_id,collection_id)
 );
 
-
 INSERT INTO TABLE albums(id,title,release_year)
 VALUES
 (1,'Revolver',1966),
@@ -67,7 +66,6 @@ VALUES
 (4,'Pop'),
 (5,'Jazz');
 
-
 INSERT INTO TABLE musicians(id,first_name,last_name,pseudonymous)
 VALUES
 (1,'Beatles',NULL,NULL,NULL),
@@ -78,7 +76,6 @@ VALUES
 (6,'Charlie,Parker',NULL),
 (7,'Metallica',NULL,NULL,NULL),
 (8,'Nirvana',NULL,NULL,NULL);
-
 
 INSERT INTO TABLE songs(id,song_name,latency,album_id)
 VALUES
