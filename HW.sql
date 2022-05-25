@@ -58,7 +58,7 @@ VALUES
 (7,'Master Of Puppets',1986),
 (8,'Nevermind',1991);
 
-INSERT INTO TABLE music_styles(id,style_name)
+INSERT INTO music_styles(id,style_name)
 VALUES
 (1,'Rock'),
 (2,'Electro'),
@@ -66,7 +66,7 @@ VALUES
 (4,'Pop'),
 (5,'Jazz');
 
-INSERT INTO TABLE musicians(id,first_name,last_name,pseudonymous)
+INSERT INTO musicians(id,first_name,last_name,pseudonymous)
 VALUES
 (1,'Beatles',NULL,NULL,NULL),
 (2,'Miles,Davis',NULL),
@@ -95,7 +95,7 @@ VALUES
 (14,'The Hall of Mirrors',7.50,5),
 (15,'Yellow Submarine',2.45,1);
 
-INSERT INTO TABLE collections(id,collect_name,release_year)
+INSERT INTO collections(id,collect_name,release_year)
 VALUES
 (1,'collection1',2010),
 (2,'collection2',1998),
@@ -106,7 +106,7 @@ VALUES
 (7,'collection7',1993),
 (8,'collection8',2008);
 
-INSERT INTO TABLE musician_album(musician_id,album_id)
+INSERT INTO musician_album(musician_id,album_id)
 VALUES
 (1,1),
 (2,2),
@@ -117,7 +117,7 @@ VALUES
 (7,7),
 (8,8);
 
-INSERT INTO TABLE musician_style(musician_id,style_id)
+INSERT INTO musician_style(musician_id,style_id)
 VALUES
 (1,1),
 (2,5),
@@ -129,7 +129,7 @@ VALUES
 (7,1),
 (8,1);
 
-INSERT INTO TABLE song_collection(song_id,collection_id)
+INSERT INTO song_collection(song_id,collection_id)
 VALUES
 (1,2),
 (1,7),
