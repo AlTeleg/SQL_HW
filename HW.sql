@@ -70,14 +70,14 @@ VALUES
 
 INSERT INTO musicians(id,first_name,last_name,pseudonymous)
 VALUES
-(1,'Beatles',NULL,NULL,NULL),
-(2,'Miles,Davis',NULL),
+(1,'Beatles',NULL,NULL),
+(2,'Miles,Davis',NULL,NULL),
 (3,'Marshall','Bruce Mathers III','Eminem'),
-(4,'Michael,Jackson',NULL),
+(4,'Michael,Jackson',NULL,NULL),
 (5,'Kraftwerk',NUll,NULL),
-(6,'Charlie,Parker',NULL),
-(7,'Metallica',NULL,NULL,NULL),
-(8,'Nirvana',NULL,NULL,NULL);
+(6,'Charlie,Parker',NULL,NULL),
+(7,'Metallica',NULL,NULL),
+(8,'Nirvana',NULL,NULL);
 
 INSERT INTO songs(id,song_name,latency,album_id)
 VALUES
