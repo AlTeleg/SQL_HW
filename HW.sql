@@ -56,7 +56,9 @@ VALUES
 (5,'Trans Europe Express',1977),
 (6,'Bird of Paradise',1995),
 (7,'Master Of Puppets',1986),
-(8,'Nevermind',1991);
+(8,'Nevermind',1991),
+(9,'Kamikaze',2018),
+(10,'The Slim Shady LP',1999);
 
 INSERT INTO music_styles(id,style_name)
 VALUES
@@ -93,18 +95,20 @@ VALUES
 (12,'Lithium',5.50,8),
 (13,'Europe Endless',9.35,5),
 (14,'The Hall of Mirrors',7.50,5),
-(15,'Yellow Submarine',2.45,1);
+(15,'Yellow Submarine',2.45,1),
+(16,'The Ringer',5.37,9),
+(17,'My Name Is',4.08);
 
 INSERT INTO collections(id,collect_name,release_year)
 VALUES
 (1,'collection1',2010),
 (2,'collection2',1998),
 (3,'collection3',2005),
-(4,'collection4',1991),
+(4,'collection4',1999),
 (5,'collection5',2020),
-(6,'collection6',1995),
-(7,'collection7',1993),
-(8,'collection8',2008);
+(6,'collection6',2019),
+(7,'collection7',2004),
+(8,'collection8',2018);
 
 INSERT INTO musician_album(musician_id,album_id)
 VALUES
@@ -115,7 +119,8 @@ VALUES
 (5,5),
 (6,6),
 (7,7),
-(8,8);
+(8,8),
+(3,9);
 
 INSERT INTO musician_style(musician_id,style_id)
 VALUES
@@ -176,4 +181,4 @@ WHERE first_name NOT LIKE '% %';
 
 SELECT song_name
 FROM songs
-WHERE song_name LIKE '%мой%' OR LIKE '%my%';
+WHERE song_name ILIKE '%мой%' OR ILIKE '%my%';
