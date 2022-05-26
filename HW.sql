@@ -156,7 +156,10 @@ VALUES
 (13,8),
 (14,6),
 (14,1),
-(15,7);
+(15,7),
+(16,4),
+(16,5),
+(17,1);
 
 SELECT title,release_year
 FROM albums
