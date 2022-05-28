@@ -7,13 +7,13 @@ CREATE TABLE musicians(
 id SERIAL PRIMARY KEY,
 first_name VARCHAR(50) NOT NULL,
 last_name VARCHAR(50),
-pseudonymous VARCHAR(50),
+pseudonymous VARCHAR(50)
 );
 
  CREATE TABLE albums(
 id SERIAL PRIMARY KEY,
 title VARCHAR(50) NOT NULL,
-release_year YEAR,
+release_year YEAR
 );
 
 CREATE TABLE songs(
@@ -26,7 +26,7 @@ album_id INTEGER REFERENCES albums(id)
 CREATE TABLE collections(
 id SERIAL PRIMARY KEY,
 collect_name VARCHAR(50) NOT NULL,
-release_year YEAR,
+release_year YEAR
 );
 
 CREATE TABLE musician_album(
