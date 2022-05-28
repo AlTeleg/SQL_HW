@@ -10,10 +10,10 @@ last_name VARCHAR(50),
 pseudonymous VARCHAR(50)
 );
 
- CREATE TABLE albums(
+CREATE TABLE albums(
 id SERIAL PRIMARY KEY,
 title VARCHAR(50) NOT NULL,
-release_year YEAR
+release_year INTEGER
 );
 
 CREATE TABLE songs(
@@ -26,7 +26,7 @@ album_id INTEGER REFERENCES albums(id)
 CREATE TABLE collections(
 id SERIAL PRIMARY KEY,
 collect_name VARCHAR(50) NOT NULL,
-release_year YEAR
+release_year INTEGER
 );
 
 CREATE TABLE musician_album(
@@ -73,7 +73,7 @@ VALUES
 (1,'Beatles',NULL,NULL),
 (2,'Miles,Davis',NULL,NULL),
 (3,'Marshall','Bruce Mathers III','Eminem'),
-(4,'Michael,Jackson',NULL,NULL),
+(4,'Michael','Jackson',NULL),
 (5,'Kraftwerk',NUll,NULL),
 (6,'Charlie,Parker',NULL,NULL),
 (7,'Metallica',NULL,NULL),
@@ -97,7 +97,7 @@ VALUES
 (14,'The Hall of Mirrors',7.50,5),
 (15,'Yellow Submarine',2.45,1),
 (16,'The Ringer',5.37,9),
-(17,'My Name Is',4.08);
+(17,'My Name Is',4.08,10);
 
 INSERT INTO collections(id,collect_name,release_year)
 VALUES
@@ -184,4 +184,4 @@ WHERE first_name NOT LIKE '% %';
 
 SELECT song_name
 FROM songs
-WHERE song_name ILIKE '%мой%' OR ILIKE '%my%';
+WHERE song_name ILIKE '%мой%' OR song_name ILIKE '%my%';
