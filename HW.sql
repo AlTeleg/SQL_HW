@@ -167,7 +167,7 @@ WHERE release_year = 2018;
 
 SELECT song_name,latency
 FROM songs
-ORDER BY DESC
+ORDER BY latency DESC
 LIMIT 1;
 
 SELECT song_name
