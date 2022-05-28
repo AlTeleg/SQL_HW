@@ -71,11 +71,11 @@ VALUES
 INSERT INTO musicians(id,first_name,last_name,pseudonymous)
 VALUES
 (1,'Beatles',NULL,NULL),
-(2,'Miles,Davis',NULL,NULL),
+(2,'Miles','Davis',NULL),
 (3,'Marshall','Bruce Mathers III','Eminem'),
 (4,'Michael','Jackson',NULL),
 (5,'Kraftwerk',NUll,NULL),
-(6,'Charlie,Parker',NULL,NULL),
+(6,'Charlie','Parker',NULL),
 (7,'Metallica',NULL,NULL),
 (8,'Nirvana',NULL,NULL);
 
