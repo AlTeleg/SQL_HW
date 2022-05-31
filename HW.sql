@@ -1,3 +1,5 @@
+create database music_stuff;
+
 CREATE TABLE music_styles(
 id SERIAL PRIMARY KEY,
 style_name VARCHAR(50) NOT NULL
@@ -185,3 +187,34 @@ WHERE first_name NOT LIKE '% %';
 SELECT song_name
 FROM songs
 WHERE song_name ILIKE '%мой%' OR song_name ILIKE '%my%';
+
+SELECT style_name, COUNT(musician_id) AS musicians_count
+FROM musicians mus
+JOIN musician_style ms ON mus.id = ms.musician_id
+JOIN music_styles mst ON mst.id = ms.style_id
+GROUP BY style_name;
+
+SELECT COUNT(s.id) AS song_count
+FROM songs s
+JOIN albums a ON s.album_id = a.id
+WHERE release_year BETWEEN 2002 AND 2003;
+
+SELECT title, AVG(latency) AS avg_latency
+FROM songs s
+JOIN albums a ON s.album_id = a.id
+GROUP BY title;
+
+SELECT first_name,last_name 
+FROM musicians mus
+JOIN musician_album ma ON ma.musician_id = mus.id
+JOIN albums a ON a.id = ma.album_id
+WHERE release_year != 2002;
+
+SELECT collect_name
+FROM collections c
+JOIN song_collection so ON c.id = so.collection_id 
+JOIN songs s ON s.id = so.song_id
+JOIN albums a ON a.id = s.album_id 
+JOIN musician_album ma ON ma.album_id = a.id
+JOIN musicians mus ON mus.id = ma.musician_id
+WHERE mus.first_name = 'Beatles';
