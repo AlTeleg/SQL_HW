@@ -160,8 +160,7 @@ VALUES
 (14,1),
 (15,7),
 (16,4),
-(16,5),
-(17,1);
+(16,5);
 
 SELECT title,release_year
 FROM albums
@@ -210,11 +209,44 @@ JOIN musician_album ma ON ma.musician_id = mus.id
 JOIN albums a ON a.id = ma.album_id
 WHERE release_year != 2002;
 
-SELECT collect_name
+SELECT DISTINCT(collect_name)
 FROM collections c
 JOIN song_collection so ON c.id = so.collection_id 
 JOIN songs s ON s.id = so.song_id
 JOIN albums a ON a.id = s.album_id 
 JOIN musician_album ma ON ma.album_id = a.id
 JOIN musicians mus ON mus.id = ma.musician_id
-WHERE mus.first_name = 'Beatles';
+WHERE mus.first_name = 'Nirvana';
+
+SELECT title
+FROM albums a
+JOIN musician_album ma ON ma.album_id = a.id
+JOIN musicians m ON m.id = ma.musician_id 
+JOIN musician_style ms ON ms.musician_id = m.id
+JOIN music_styles ms2 ON ms2.id = ms.style_id
+GROUP BY m.id,title
+HAVING COUNT(style_id)>1;
+
+SELECT song_name 
+FROM songs s
+JOIN song_collection sc ON s.id = sc.song_id
+WHERE sc.song_id IS NULL;
+
+SELECT first_name, last_name
+from musicians m
+JOIN musician_album ma ON ma.musician_id = m.id
+JOIN albums a ON ma.album_id = a.id
+JOIN songs s ON s.album_id = a.id
+WHERE latency IN (SELECT MIN(latency) FROM songs s);
+
+select title
+FROM albums a
+JOIN songs s on s.album_id = a.id
+GROUP BY title
+HAVING COUNT(s.id) IN (
+	SELECT COUNT(s.id)
+	FROM albums a
+	JOIN songs s on s.album_id = a.id
+	GROUP BY title
+	ORDER BY COUNT(s.id)
+	LIMIT 1);
